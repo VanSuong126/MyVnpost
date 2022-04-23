@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomePage from  "../Components/home";
 import LoginForm from '../Components/login';
-import IndexForm from '../Components/index';
+import DashboardForm from '../Components/dashboard';
 import CreateOrderForm  from '../Components/createOrder'
 
 const Stack = createNativeStackNavigator();
@@ -15,9 +15,9 @@ const  Navigation=()=> {
               screenOptions={{
                 headerShown: false
               }}>
+              <Stack.Screen name="Dashboard" component={DashboardForm} />
              <Stack.Screen name="Home" component={HomePage} />
              <Stack.Screen name="Login" component={LoginForm} />
-             <Stack.Screen name="Dashboard" component={IndexForm} />
              <Stack.Screen name="CreateOrder" component={CreateOrderForm} />
              </Stack.Navigator>
         </NavigationContainer>
