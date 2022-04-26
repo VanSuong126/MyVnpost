@@ -6,8 +6,9 @@ import {
   Image,
   SafeAreaView,
   TextInput,
-  Pressable,
+  TouchableOpacity,
   ScrollView,
+  Pressable,
 } from 'react-native';
 // import image
 import IconBack from '../assets/images/back.png';
@@ -378,14 +379,19 @@ const EMSTree = () => {
   );
 };
 
-const CreateOrderForm = () => {
+const CreateOrderForm = ({navigation}) => {
   generateBoxShadowStyle(2, 4, '#171717', 0.2, 3, 4, '#171717');
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <View style={styles.header}>
-          <Image style={styles.icon_back} source={IconBack} />
+        <TouchableOpacity style={styles.icon_back} 
+              onPress={() => {
+                navigation.goBack();
+              }}>
+          <Image source={IconBack} />
+          </TouchableOpacity>
           <Text style={styles.heder_title}>Tạo đơn hàng</Text>
         </View>
         <View style={styles.body}>

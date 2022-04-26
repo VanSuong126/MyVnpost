@@ -22,8 +22,8 @@ import Icon_Zalo from '../assets/images/zalo.png';
 import Icon_Info from '../assets/images/icon_info.png';
 import {useDispatch, useSelector} from 'react-redux';
 //import {loginAction} from '../Redux/ToolKit/loginSlice';
-import { isLoginSuccess } from '../Redux/selector';
-import { loginApp } from '../Redux/action';
+import {isLoginSuccess} from '../Redux/selector';
+import {loginApp} from '../Redux/action';
 
 const LoginForm = ({navigation}) => {
   // useState
@@ -44,7 +44,7 @@ const LoginForm = ({navigation}) => {
     setValuePassWord(value);
   }
   function handleClickButtonLogin() {
-    CallApiLoginVnpost(valueUsername,valuePassword);
+    CallApiLoginVnpost(valueUsername, valuePassword);
     dispatch(loginApp(User));
   }
 
@@ -64,10 +64,10 @@ const LoginForm = ({navigation}) => {
         },
         data: data,
       };
-  
+
       axios(config)
         .then(function (response) {
-          setToken(JSON.stringify(response.data.Token))
+          setToken(JSON.stringify(response.data.Token));
         })
         .catch(function (error) {
           console.log(error);
@@ -75,12 +75,9 @@ const LoginForm = ({navigation}) => {
     }
   }
   const Access = useSelector(isLoginSuccess);
-  useEffect(()=>{
-    if(Access===true)
-    navigation.navigate('CreateOrder');
-  },[Access])
-
-
+  useEffect(() => {
+    if (Access === true) navigation.navigate('Dashboard');
+  }, [Access]);
   return (
     <View style={styles.Container}>
       <View style={styles.wrap_content}>

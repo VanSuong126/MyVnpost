@@ -15,10 +15,10 @@ const  Navigation=()=> {
               screenOptions={{
                 headerShown: false
               }}>
-              <Stack.Screen name="Dashboard" component={DashboardForm} />
              <Stack.Screen name="Home" component={HomePage} />
              <Stack.Screen name="Login" component={LoginForm} />
              <Stack.Screen name="CreateOrder" component={CreateOrderForm} />
+             <Stack.Screen name="Dashboard" component={DashboardForm} />
              </Stack.Navigator>
         </NavigationContainer>
     )
