@@ -22,8 +22,8 @@ import Icon_Zalo from '../assets/images/zalo.png';
 import Icon_Info from '../assets/images/icon_info.png';
 import {useDispatch, useSelector} from 'react-redux';
 //import {loginAction} from '../Redux/ToolKit/loginSlice';
-import {isLoginSuccess} from '../Redux/selector';
-import {loginApp} from '../Redux/action';
+import {isLoginSuccess} from '../redux/selector';
+import {loginApp} from '../redux/action';
 
 const LoginForm = ({navigation}) => {
   // useState

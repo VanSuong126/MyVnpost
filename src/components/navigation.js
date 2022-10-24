@@ -2,10 +2,10 @@ import React, {Component, useState} from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomePage from  "../Components/home";
-import LoginForm from '../Components/login';
-import DashboardForm from '../Components/dashboard';
-import CreateOrderForm  from '../Components/createOrder'
+import HomePage from  "./home";
+import LoginForm from './login';
+import DashboardForm from './dashboard';
+import CreateOrderForm  from './createOrder'
 
 const Stack = createNativeStackNavigator();
 const  Navigation=()=> {

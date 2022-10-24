@@ -23,7 +23,7 @@ import Logo from '../assets/images/logo.png';
 import IconMenu from '../assets/images/menu.png';
 import Bell from '../assets/images/bell.png';
 //import data
-import {dataSlider, dataService, actions} from '../Datas/dataDashboard';
+import {dataSlider, dataService, actions} from '../data/dataDashboard';
 // import library Carousel
 import Carousel from 'react-native-snap-carousel';
 // import library Floating action

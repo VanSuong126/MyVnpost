@@ -18,8 +18,8 @@ import Bell from '../assets/images/bell.png';
 import Box from '../assets/images/box.png';
 import Package from '../assets/images/package.png';
 
-import RadioButton from '../Plugins/Radiobutton';
-import CheckBox from '../Plugins/Checkbox';
+import RadioButton from '../modals/Radiobutton';
+import CheckBox from '../modals/Checkbox';
 
 //Component infomation Sender
 const SenderInformation = () => {
