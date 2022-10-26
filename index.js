@@ -4,8 +4,7 @@
 import React from 'react';
 import {AppRegistry, YellowBox} from 'react-native';
 import {name as appName} from './app.json';
-import HomePage from './src/components/home';
-import Navigation from './src/components/navigation';
+import Navigation from "navigations/navigation";
 import {Provider} from 'react-redux';
 // ignore specific yellowbox warnings
 console.disableYellowBox = true;

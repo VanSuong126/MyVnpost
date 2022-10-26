@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { Alert } from "react-native-web";
-import Tick from "../assets/images/tick.png"
+import Tick from "assets/images/tick.png"
 
 export default function CheckBox({ title, onSelect }) {
     const [ischeck, setIsCheck] = useState(false);

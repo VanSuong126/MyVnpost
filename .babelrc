@@ -1,0 +1,19 @@
+{
+  "plugins": [
+    ["module-resolver", {
+     
+      "alias": {
+        "root": ["./src"],
+        "assets": "./src/assets",
+        "data": "./src/data",
+        "redux": "./src/redux",
+        "modals": "./src/modals",
+        "helper": "./src/helper",
+        "screens": "./src/screens",
+        "shared": "./src/shared",
+        "themes": "./src/themes",
+        "navigations": "./src/navigations"
+      }
+    }]
+  ]
+}

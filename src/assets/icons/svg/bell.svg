@@ -1,0 +1,21 @@
+<svg id="fixed_nav" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="41" height="47" viewBox="0 0 41 47">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#filter);
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+    <filter id="filter" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#828282"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="off" class="cls-1">
+    <path id="シェイプ_18" data-name="シェイプ 18" class="cls-2" d="M20.455,5.932l1.608,0.245A10.156,10.156,0,0,1,30.823,16.2c0,11.615,1.737,16.162,4.058,18.474H6.037c2.644-2.546,4.051-7.3,4.051-18.474a10.156,10.156,0,0,1,8.76-10.018l1.608-.245m0-5.922a2.1,2.1,0,0,0-2.118,2.075V2.969A13.484,13.484,0,0,0,6.772,16.2c0,23.056-6.543,13.746-6.543,20.615a1.118,1.118,0,0,0,1.13,1.107H39.552a1.119,1.119,0,0,0,1.13-1.107V36.493c0-5.93-6.543,2.17-6.543-20.3A13.484,13.484,0,0,0,22.574,2.969V2.163a2.134,2.134,0,0,0-1.68-2.11A2.265,2.265,0,0,0,20.455.01h0Zm0,46.5a7.039,7.039,0,0,0,7.082-6.517H13.373A7.039,7.039,0,0,0,20.455,46.51Z"/>
+  </g>
+</svg>
