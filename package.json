@@ -3,9 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
     "start": "react-native start",
+    "clean": "rm -rf node_modules && rm -rf package-lock.json",
+    "clean:android": "cd android && ./gradlew clean",
+    "clean:ios": "rm -rf ios/Pods && rm -rf ios/Podfile.lock",
+    "setup:ios": "cd ios && pod install && cd ..",
+    "android": "react-native run-android --variant=debug",
+    "android:release": "react-native run-android --variant=release",
+    "ios": "react-native run-ios --scheme 'AppDevelopment' --simulator='iPhone 12'",
+    "ios:prod": "react-native run-ios --scheme 'AppProduction' --simulator='iPhone 13'",
     "test": "jest",
     "lint": "eslint ."
   },

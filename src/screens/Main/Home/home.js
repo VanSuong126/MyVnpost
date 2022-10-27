@@ -9,11 +9,11 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import HeaderBackGround from 'assets/images/background_home.png';
-import LogoTop from 'assets/images/logoTop.png';
+import HeaderBackGround from '~assets/images/background_home.png';
+import LogoTop from '~assets/images/logoTop.png';
 // Import library Linner Gradient
 import LinearGradient from 'react-native-linear-gradient';
-import { dataService } from 'data/dataHome';
+import { dataService } from '~data/dataHome';
 // import Image Slider
 var maxwidth = Dimensions.get('screen').width; // width full screen
 var maxheight = Dimensions.get('screen').height; // height full screen

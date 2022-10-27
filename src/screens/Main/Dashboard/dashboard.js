@@ -18,12 +18,12 @@ import LinearGradient from 'react-native-linear-gradient';
 var maxwidth = Dimensions.get('screen').width; // width full screen
 var maxheight = Dimensions.get('screen').height; // height full screen
 // import Icon
-import IconProfile from 'assets/images/profile.png';
-import Logo from 'assets/images/logo.png';
-import IconMenu from 'assets/images/menu.png';
-import Bell from 'assets/images/bell.png';
+import IconProfile from '~assets/images/profile.png';
+import Logo from '~assets/images/logo.png';
+import IconMenu from '~assets/images/menu.png';
+import Bell from '~assets/images/bell.png';
 //import data
-import {dataSlider, dataService, actions} from 'data/dataDashboard';
+import {dataSlider, dataService, actions} from '~data/dataDashboard';
 // import library Carousel
 import Carousel from 'react-native-snap-carousel';
 // import library Floating action

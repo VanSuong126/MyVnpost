@@ -12,18 +12,18 @@ import {
 var maxwidth = Dimensions.get('screen').width; // width full screen
 var maxheight = Dimensions.get('screen').height; // height full screen
 // import image form login
-import BackgroundLogin from 'assets/images/background_login.png';
-import ArrowBack from 'assets/images/back.png';
-import Logo from 'assets/images/logoTop.png';
-import Icon_Account from 'assets/images/account.png';
-import Icon_Pass from 'assets/images/lock.png';
-import Icon_Facebook from 'assets/images/facebook.png';
-import Icon_Zalo from 'assets/images/zalo.png';
-import Icon_Info from 'assets/images/icon_info.png';
+import BackgroundLogin from '~assets/images/background_login.png';
+import ArrowBack from '~assets/images/back.png';
+import Logo from '~assets/images/logoTop.png';
+import Icon_Account from '~assets/images/account.png';
+import Icon_Pass from '~assets/images/lock.png';
+import Icon_Facebook from '~assets/images/facebook.png';
+import Icon_Zalo from '~assets/images/zalo.png';
+import Icon_Info from '~assets/images/icon_info.png';
 import {useDispatch, useSelector} from 'react-redux';
-//import {loginAction} from 'redux/ToolKit/loginSlice';
-import {isLoginSuccess} from 'redux/selector';
-import {loginApp} from 'redux/action';
+//import {loginAction} from '~redux/ToolKit/loginSlice';
+import {isLoginSuccess} from '~redux/selector';
+import {loginApp} from '~redux/action';
 
 const LoginForm = ({navigation}) => {
   // useState

@@ -4,7 +4,7 @@ import { Modal, StyleSheet } from 'react-native';
 import { View, Image } from "components/MyStyle"
 import { parseSize } from 'theme'
 
-const IMG_LOADING = require('assets/icons/gif/loading.gif');
+const IMG_LOADING = require('~assets/icons/gif/loading.gif');
 
 const LoadingScreen = ({
     visible = false,

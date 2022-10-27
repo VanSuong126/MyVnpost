@@ -2,9 +2,18 @@
     "compilerOptions": {
       "baseUrl": ".",
       "paths": {
-        "*": ["src/*"],
-        "assets/*": ["assets/*"],
-        "navigations/*": ["navigations/*"]
+        "~root": ["src/*"],
+        "~assets/*": ["assets/*"],
+        "~data/*": ["~data/*"],
+        "~redux/*": ["~redux/*"],
+        "~modals/*": ["~modals/*"],
+        "~helper/*": ["helper/*"],
+        "~screens/*": ["screens/*"],
+        "~shared/*": ["shared/*"],
+        "~themes/*": ["themes/*"],
+        "~constants/*": ["constants/*"],
+        "~services/*": ["services/*"],
+        "~navigations/*": ["~navigations/*"]
       }
     }
   }

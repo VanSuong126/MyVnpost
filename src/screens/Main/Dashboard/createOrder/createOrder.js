@@ -11,15 +11,15 @@ import {
   Pressable,
 } from 'react-native';
 // import image
-import IconBack from 'assets/images/back.png';
-import ArrowUp from 'assets/images/arrowup.png';
-import ArrowDown from 'assets/images/arrowdown.png';
-import Bell from 'assets/images/bell.png';
-import Box from 'assets/images/box.png';
-import Package from 'assets/images/package.png';
+import IconBack from '~assets/images/back.png';
+import ArrowUp from '~assets/images/arrowup.png';
+import ArrowDown from '~assets/images/arrowdown.png';
+import Bell from '~assets/images/bell.png';
+import Box from '~assets/images/box.png';
+import Package from '~assets/images/package.png';
 
-import RadioButton from 'modals/Radiobutton';
-import CheckBox from 'modals/Checkbox';
+import RadioButton from '~modals/Radiobutton';
+import CheckBox from '~modals/Checkbox';
 
 //Component infomation Sender
 const SenderInformation = () => {
