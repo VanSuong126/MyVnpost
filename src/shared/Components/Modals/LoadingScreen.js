@@ -1,8 +1,8 @@
 import React from 'react'
 import { Modal, StyleSheet } from 'react-native';
 
-import { View, Image } from "components/MyStyle"
-import { parseSize } from 'theme'
+import { View, Image } from "~shared/Components/MyStyle"
+import { parseSize } from '~themes'
 
 const IMG_LOADING = require('~assets/icons/gif/loading.gif');
 

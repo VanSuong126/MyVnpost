@@ -290,6 +290,7 @@ dependencies {
         implementation jscFlavor
     }
     implementation project(':react-native-linear-gradient')
+    implementation project(':react-native-restart')
 }
 
 if (isNewArchitectureEnabled()) {

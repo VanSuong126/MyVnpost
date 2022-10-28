@@ -1,6 +1,6 @@
 import { Dimensions, Platform, StatusBar } from 'react-native'
 
-import deviceInfo from 'helper/deviceInfo'
+import deviceInfo from '~helper/deviceInfo'
 
 export const platform = Platform.OS;
 const deviceName = deviceInfo.deviceName || '';

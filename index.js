@@ -2,18 +2,20 @@
  * @format
  */
 import React from 'react';
-import {AppRegistry, YellowBox} from 'react-native';
+import {AppRegistry,View, SafeAreaView} from 'react-native';
 import {name as appName} from './app.json';
+
+import './src/helper/i18n';
+import {Colors} from '~themes';
 import Navigation from "~navigations/navigation";
-import {Provider} from 'react-redux';
-// ignore specific yellowbox warnings
-console.disableYellowBox = true;
-YellowBox.ignoreWarnings(['Warning:']);
-import store from '~redux/store';
+import Network from '~shared/Components/Network/index';
+import _ from 'lodash';
+global._ = _;
 
 const Root = () => (
-  <Provider store={store}>
-    <Navigation />
-  </Provider>
+  <View style={{ flex: 1, backgroundColor: Colors.white }}>
+    <Network/>
+    <Navigation/>
+</View>
 );
 AppRegistry.registerComponent(appName, () => Root);
