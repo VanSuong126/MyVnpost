@@ -21,9 +21,9 @@ import Icon_Facebook from '~assets/images/facebook.png';
 import Icon_Zalo from '~assets/images/zalo.png';
 import Icon_Info from '~assets/images/icon_info.png';
 import {useDispatch, useSelector} from 'react-redux';
-//import {loginAction} from '~redux/ToolKit/loginSlice';
-import {isLoginSuccess} from '~redux/selector';
-import {loginApp} from '~redux/action';
+//import {loginAction} from '~reduxCore/ToolKit/loginSlice';
+import {selectors} from '~reduxCore/reducers/user';
+import {loginApp} from '~reduxCore/action';
 
 const LoginForm = ({navigation}) => {
   // useState
@@ -74,7 +74,7 @@ const LoginForm = ({navigation}) => {
         });
     }
   }
-  const Access = useSelector(isLoginSuccess);
+  const Access = useSelector(selectors.isLoginSuccess);
   useEffect(() => {
     if (Access === true) navigation.navigate('Dashboard');
   }, [Access]);

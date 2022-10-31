@@ -7,8 +7,8 @@ import {name as appName} from './app.json';
 
 import './src/helper/i18n';
 import {Colors} from '~themes';
-import Navigation from "~navigations/navigation";
-import Network from '~shared/Components/Network/index';
+import Navigation from "~navigators";
+import Network from '~shared/components/Network';
 import _ from 'lodash';
 global._ = _;
 

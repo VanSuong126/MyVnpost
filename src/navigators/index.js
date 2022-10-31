@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import {Provider} from 'react-redux';
-import { store, persistor } from '~redux/store';
+import { store, persistor } from '~reduxCore/store';
 
 import HomePage from '../screens/Main/Home/home';
 import LoginForm from '../screens/Auths/Login/login';

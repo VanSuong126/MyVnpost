@@ -6,7 +6,7 @@
         "~root": ["./src"],
         "~assets": "./src/assets",
         "~data": "./src/data",
-        "~redux": "./src/redux",
+        "~reduxCore": "./src/reduxCore",
         "~modals": "./src/modals",
         "~helper": "./src/helper",
         "~screens": "./src/screens",
@@ -14,7 +14,7 @@
         "~themes": "./src/themes",
         "~constants": "./src/constants",
         "~services": "./src/services",
-        "~navigations": "./src/navigations"
+        "~navigators": "./src/navigators"
       }
     }]
   ]

@@ -5,7 +5,7 @@ import NetInfo from "@react-native-community/netinfo";
 import { useTranslation } from 'react-i18next';
 
 
-import { Text } from '~shared/Components/MyStyle'
+import { Text } from '~shared/components/MyStyle'
 import { Colors, Sizes } from '~themes'
 
 const Network = () => {
