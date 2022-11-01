@@ -4,6 +4,7 @@
      
       "alias": {
         "~root": ["./src"],
+        "~config": "./src/config",
         "~assets": "./src/assets",
         "~data": "./src/data",
         "~reduxCore": "./src/reduxCore",

@@ -7,7 +7,6 @@ import {
   Dimensions,
   TextInput,
   TouchableOpacity,
-  SafeAreaView,
 } from 'react-native';
 var maxwidth = Dimensions.get('screen').width; // width full screen
 var maxheight = Dimensions.get('screen').height; // height full screen
@@ -22,19 +21,13 @@ import Icon_Zalo from '~assets/images/zalo.png';
 import Icon_Info from '~assets/images/icon_info.png';
 import {useDispatch, useSelector} from 'react-redux';
 //import {loginAction} from '~reduxCore/ToolKit/loginSlice';
-import {selectors} from '~reduxCore/reducers/user';
-import {loginApp} from '~reduxCore/action';
+import {selectors, actions} from '~reduxCore/reducers/user';
 
 const LoginForm = ({navigation}) => {
   // useState
-  const [valueUsername, setValueUserName] = useState('');
-  const [valuePassword, setValuePassWord] = useState('');
+  const [username, setValueUserName] = useState('');
+  const [password, setValuePassWord] = useState('');
   const [Token, setToken] = useState('');
-  const User = {
-    Username: valueUsername,
-    Password: valuePassword,
-    TokenAccess: Token,
-  };
   // useDisPatch
   const dispatch = useDispatch();
   function handleChangeTextUser(value) {
@@ -43,37 +36,16 @@ const LoginForm = ({navigation}) => {
   function handleChangeTextPass(value) {
     setValuePassWord(value);
   }
-  function handleClickButtonLogin() {
-    CallApiLoginVnpost(valueUsername, valuePassword);
-    dispatch(loginApp(User));
-  }
-
-  // Call api login
-  function CallApiLoginVnpost(Username, Password) {
-    if (Username !== '' && Password !== '') {
-      var axios = require('axios');
-      var data = JSON.stringify({
-        TenDangNhap: Username,
-        MatKhau: Password,
-      });
-      var config = {
-        method: 'post',
-        url: 'https://donhang.vnpost.vn/api/api/MobileAuthentication/GetAccessToken',
-        headers: {
-          'Content-Type': 'application/json',
+  const gotoSignIn = async () => {
+    // await dispatch(commonActions.toggleLoading(true));
+    const payload = await {
+        params: {
+            username,
+            password
         },
-        data: data,
-      };
-
-      axios(config)
-        .then(function (response) {
-          setToken(JSON.stringify(response.data.Token));
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
     }
-  }
+    dispatch(actions.userLogin(payload));
+};
   const Access = useSelector(selectors.isLoginSuccess);
   useEffect(() => {
     if (Access === true) navigation.navigate('Dashboard');
@@ -110,7 +82,7 @@ const LoginForm = ({navigation}) => {
                 <TextInput
                   style={styles.txt_account}
                   placeholder="Tên đăng nhập"
-                  value={valueUsername}
+                  value={username}
                   onChangeText={text => handleChangeTextUser(text)}
                 />
               </View>
@@ -122,13 +94,13 @@ const LoginForm = ({navigation}) => {
                   secureTextEntry={true}
                   style={styles.txt_pass}
                   placeholder="Mật khẩu"
-                  value={valuePassword}
+                  value={password}
                   onChangeText={text => handleChangeTextPass(text)}
                 />
               </View>
             </View>
             <View style={styles.warp_button}>
-              <TouchableOpacity onPress={() => handleClickButtonLogin()}>
+              <TouchableOpacity onPress={gotoSignIn}>
                 <View style={styles.btn_login}>
                   <Text style={styles.txt_btn_login}>Đăng nhập</Text>
                 </View>
