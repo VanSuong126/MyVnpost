@@ -11,10 +11,8 @@ const persistConfig = {
 
 const sagaMiddleware = createSagaMiddleware();
 
-// import rootReducer from '~reduxCore/reducers/rootReducer';
-// import rootSaga from '~reduxCore/saga/rootSaga';
-import rootReducer from '~reduxCore/reducers';
-import rootSaga from '~reduxCore/saga';
+import rootReducer from '../reducers';
+import rootSaga from '../saga';
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

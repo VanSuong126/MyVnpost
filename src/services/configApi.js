@@ -25,54 +25,51 @@ import { store } from '~reduxCore/store'
 import Navigation from "~navigators";
 
 const apiPath = domain_url_api;
-let Headers = {
+let config = {
     headers: {
         Accept: "*/*",
-        "Content-Type": "multipart/form-data",
+        'Content-Type': 'application/json',
         "Access-Control-Request-Method": "*",
         "Access-Control-Request-Headers": "*",
+        
     },
     timeout: TIME_OUT,
 }
 
 export const Axios = async (method, path, params) => {
+    console.log('Call api Axios')
     let getQuery = await (method === "get") ? "?" + utils.objectToQueryString(params) : "";
     console.log("[API Axios] : " + method + ": " + apiPath + path);
-    Headers.method = method;
-    Headers.data = await (method === "get") ? '' : (params);
-    Headers.url = apiPath + path + getQuery;
+    config.method = method;
+    config.data = await (method === "get") ? '' : (params);
+    config.url = apiPath + path + getQuery;
 
-    const authToken = store.getState().user.userToken;
-    const country = store.getState().common.country;
-    Headers.headers = await {
-        lang_code: country?.lang_code || "vie",
-    }
+    const authToken = store.getState().user.Token;
     if (authToken) {
-        Headers.headers = await {
-            ...Headers.headers,
+        config.headers = await {
+            ...config.headers,
             Authorization: authToken ? `${authToken}` : null,
         };
     } else {
-        Headers.headers = await {
-            ...Headers.headers,
+        config.headers = await {
+            ...config.headers,
             Cookie: null,
         };
-        delete Headers.headers['Authorization'];
+        delete config.headers['Authorization'];
     }
 
-    return axios(Headers)
+    return axios(config)
         .then(res => {
             console.log(`Result api ${path} ::: `, res);
             const status = res?.status;
-            const dataResult = res?.data?.data;
-            const errorStatus = res?.data?.error;
-            const codeStatus = res?.data?.code;
-            const errorMessage = res?.data?.message;
+            const dataResult = res?.data;
+            const codeStatus = res?.data?.IsSuccess;
+            const errorMessage = res?.data?.ErrorMessage;
             // data badge number for notification api
             const badge = res?.data?.total_read || 0;
 
             //SUCCESS PUT/GET/DELETE 200
-            if (status == SUCCESS && codeStatus === SUCCESS) {
+            if (status == SUCCESS) {
                 return Promise.resolve({
                     success: true,
                     error: null,
@@ -81,7 +78,7 @@ export const Axios = async (method, path, params) => {
                 });
             }
             //SUCCESS POST 201
-            else if (status === SUCCESS_POST || errorStatus === SUCCESS_POST) {
+            else if (status === SUCCESS_POST) {
                 return Promise.resolve({
                     success: true,
                     error: errorMessage || i18n.t(`errMsg`),
@@ -89,7 +86,7 @@ export const Axios = async (method, path, params) => {
                 });
             }
             //ERROR 202
-            else if (status === INVALID_DATA || errorStatus === INVALID_DATA) {
+            else if (status === INVALID_DATA) {
                 return Promise.resolve({
                     success: false,
                     error: errorMessage || i18n.t(`errMsg`),
@@ -97,7 +94,7 @@ export const Axios = async (method, path, params) => {
                 });
             }
             //ERROR NO CONTENT 204
-            else if (status === NO_CONTENT || errorStatus === NO_CONTENT) {
+            else if (status === NO_CONTENT) {
                 return Promise.resolve({
                     success: false,
                     error: errorMessage || i18n.t(`errMsg`),
@@ -105,7 +102,7 @@ export const Axios = async (method, path, params) => {
                 });
             }
             //ERROR NOT FOUND 404
-            else if (status === NOT_FOUND || errorStatus === NOT_FOUND) {
+            else if (status === NOT_FOUND) {
                 return Promise.resolve({
                     success: false,
                     error: errorMessage || i18n.t(`errMsg`),

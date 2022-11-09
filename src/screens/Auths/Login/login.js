@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -19,15 +19,15 @@ import Icon_Pass from '~assets/images/lock.png';
 import Icon_Facebook from '~assets/images/facebook.png';
 import Icon_Zalo from '~assets/images/zalo.png';
 import Icon_Info from '~assets/images/icon_info.png';
-import {useDispatch, useSelector} from 'react-redux';
-//import {loginAction} from '~reduxCore/ToolKit/loginSlice';
-import {selectors, actions} from '~reduxCore/reducers/user';
+import {useDispatch} from 'react-redux';
+import {userActions} from '~reduxCore/reducers';
+import deviceInfo from '~helper/deviceInfo'
+import LocalDB from '~data/asyncStorage';
 
 const LoginForm = ({navigation}) => {
   // useState
-  const [username, setValueUserName] = useState('');
-  const [password, setValuePassWord] = useState('');
-  const [Token, setToken] = useState('');
+  const [userName, setValueUserName] = useState('');
+  const [passWord, setValuePassWord] = useState('');
   // useDisPatch
   const dispatch = useDispatch();
   function handleChangeTextUser(value) {
@@ -36,20 +36,31 @@ const LoginForm = ({navigation}) => {
   function handleChangeTextPass(value) {
     setValuePassWord(value);
   }
+  useEffect(() => {
+    checkSession();
+    },[])
+  const checkSession = async () => {
+    const userToken = await LocalDB.getUserToken();
+    if(userToken)
+    {
+      navigation.navigate("Dashboard");
+    }
+  }
   const gotoSignIn = async () => {
     // await dispatch(commonActions.toggleLoading(true));
     const payload = await {
         params: {
-            username,
-            password
+          ten_dang_nhap: userName,
+          mat_khau: passWord
         },
     }
-    dispatch(actions.userLogin(payload));
+    await dispatch(userActions.userLogin(payload));
+    const Token = await LocalDB.getUserToken();
+    if(Token)
+    {
+      navigation.navigate("Dashboard");
+    }
 };
-  const Access = useSelector(selectors.isLoginSuccess);
-  useEffect(() => {
-    if (Access === true) navigation.navigate('Dashboard');
-  }, [Access]);
   return (
     <View style={styles.Container}>
       <View style={styles.wrap_content}>
@@ -82,7 +93,7 @@ const LoginForm = ({navigation}) => {
                 <TextInput
                   style={styles.txt_account}
                   placeholder="Tên đăng nhập"
-                  value={username}
+                  value={userName}
                   onChangeText={text => handleChangeTextUser(text)}
                 />
               </View>
@@ -94,7 +105,7 @@ const LoginForm = ({navigation}) => {
                   secureTextEntry={true}
                   style={styles.txt_pass}
                   placeholder="Mật khẩu"
-                  value={password}
+                  value={passWord}
                   onChangeText={text => handleChangeTextPass(text)}
                 />
               </View>

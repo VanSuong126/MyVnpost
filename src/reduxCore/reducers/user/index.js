@@ -1,9 +1,9 @@
 import { createAction, handleActions } from "redux-actions";
 
 const initialUser = {
-    Username: '',
-    Password: '',
-    TokenAccess: null,
+    Username: null,
+    Password: null,
+    Token: null,
     isLogin: false,
   };    
 
@@ -38,21 +38,15 @@ export const actions = {
 }
 
 export const selectors = {
-    isLoginSuccess: (state) => state.isLogin
-};
-
-const defaultState = {
-    user: null,
+    isLoginSuccess: (state) => state.isLogin,
+    Token: (state) => state.TokenAccess
 };
 
 export default handleActions(
     {
-        [types.SET_USER_DATA]: (state, { payload }) => {
-            return { ...state, TokenAccess: payload.TokenAccess, isLogin: true};
-        },
-        [types.USER_LOGOUT_SUCCESS]: (state, { payload }) => {
-            return { ...state, TokenAccess: null, isLogin:false  };
+        [types.SET_TOKEN]: (state, { payload }) => {
+            return { ...state, Token: payload.Token, isLogin: true };
         },
     },
-    defaultState,
+    initialUser,
 );

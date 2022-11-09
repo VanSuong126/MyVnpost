@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 
 import user, {
   actions as userActions,
@@ -7,8 +7,9 @@ import user, {
 } from './user';
 
 const rootReducer = combineReducers({
-  user,
+  user
 });
-export { userActions, userSelectors, userTypes }
+
+export {userActions, userSelectors, userTypes};
 
 export default rootReducer;

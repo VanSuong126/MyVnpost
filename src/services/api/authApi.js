@@ -7,7 +7,8 @@ export const userSignUp = (payload) => {
 };
 
 export const userLogin = (payload) => {
-  return Axios(POST, '/api/api/MobileAuthentication/GetAccessToken', payload);
+  console.log('Call api get token');
+  return Axios(POST, '/api/MobileAuthentication/GetAccessToken', payload);
 };
 
 export const userLogout = (payload) => {

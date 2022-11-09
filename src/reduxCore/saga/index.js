@@ -4,6 +4,6 @@ import user from './user';
 
 export default function* rootSaga() {
   yield all([
-    ...user,
+    ...user
   ]);
 }

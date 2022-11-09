@@ -1,0 +1,14 @@
+ENVIROMENT=DEV
+DOMAIN_URL=https:/$()/donhang.vnpost.vn
+API_URL=https:/$()/donhang.vnpost.vn/api
+DOMAIN_IMAGE_URL=https:/$()/online.zenyspa.com/photos/view/productservice/
+DOMAIN_IMAGE_RATING_URL=https:/$()/online.zenyspa.com/photos/view/rating/
+DOMAIN_IMAGE_URL_AVT=https:/$()/online.zenyspa.com/photos/view/customers/
+APP_NAME=My Vnpost DEV
+VERSION_CODE_ANROID=31
+VERSION_NAME_ANROID=1.0.5
+VERSION_CODE_IOS=1
+VERSION_NAME_IOS=1.2.9
+NOTIFICATION_CHANNEL_ID='
+CODEPUSH_ANDROID_KEY=3jBubrw0xMoaxCjG2nDaOGH12y9BZWlRGdQJe
+CODEPUSH_IOS_KEY=6RdPAX1_vPnYjKriC5paKBseUr3A4aJWi5JtQ

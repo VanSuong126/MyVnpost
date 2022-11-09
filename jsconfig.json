@@ -4,16 +4,16 @@
       "paths": {
         "~root": ["src/*"],
         "~assets/*": ["assets/*"],
-        "~data/*": ["~data/*"],
-        "~reduxCore/*": ["~reduxCore/*"],
-        "~modals/*": ["~modals/*"],
+        "~data/*": ["data/*"],
+        "~reduxCore/*": ["reduxCore/*"],
+        "~modals/*": ["modals/*"],
         "~helper/*": ["helper/*"],
         "~screens/*": ["screens/*"],
         "~shared/*": ["shared/*"],
         "~themes/*": ["themes/*"],
         "~constants/*": ["constants/*"],
         "~services/*": ["services/*"],
-        "~navigators/*": ["~navigators/*"]
+        "~navigators/*": ["navigators/*"]
       }
     }
   }
