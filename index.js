@@ -14,9 +14,11 @@ LogBox.ignoreAllLogs();
 
 import _ from 'lodash';
 global._ = _;
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Root = () => (
   <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
+   <Icon name="rocket" size={30} color="#900" />
     <Network/>
     <Navigation/>
 </SafeAreaView>
