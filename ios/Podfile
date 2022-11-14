@@ -20,6 +20,7 @@ target 'MyVnpost' do
   )
   # pod Linner Gradient
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'MyVnpostTests' do
     inherit! :complete

@@ -1,0 +1,29 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Ionicons.ttf",
+      "sha1": "991bb7fac9709cd58da37901770efd4703c542ed"
+    },
+    {
+      "path": "src/assets/fonts/NotoSans-Bold.ttf",
+      "sha1": "00a4dc42180951b52eb9797cb4d6f64527432220"
+    },
+    {
+      "path": "src/assets/fonts/NotoSans-Regular.ttf",
+      "sha1": "58b6ffb44ac9d4c9142a5e18cab9ac7fc189a02e"
+    },
+    {
+      "path": "src/assets/fonts/NotoSansJP-Bold.otf",
+      "sha1": "17bc65a27a32ccd455533c3033b44f052d09bd14"
+    },
+    {
+      "path": "src/assets/fonts/NotoSansJP-Regular.otf",
+      "sha1": "91e0a7cdd6fdbfee8bfc44dc99f058a1320c5ea2"
+    },
+    {
+      "path": "src/assets/fonts/fontello.ttf",
+      "sha1": "76ca99db7ff579f5cd40b0c6bf62a261f79a55ec"
+    }
+  ]
+}
