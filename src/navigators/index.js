@@ -1,16 +1,16 @@
-import React, {Component, useState} from 'react';
-import {View, Text} from 'react-native';
+import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import {Provider} from 'react-redux';
 import { store, persistor } from '~reduxCore/store';
 
-import HomePage from '../screens/Main/Home/home';
-import LoginForm from '../screens/Auths/Login/login';
-import DashboardForm from '../screens/Main/Dashboard/dashboard';
-import CreateOrderForm from '../screens/Main/Dashboard/createOrder/createOrder';
-
+import {
+  Login,
+  Home,
+  Dashboard,
+  CreateOrder
+} from '~screens';
 
 const Stack = createNativeStackNavigator();
 const Navigation = () => {
@@ -22,10 +22,10 @@ const Navigation = () => {
           screenOptions={{
             headerShown: false,
           }}>
-          <Stack.Screen name="Home" component={HomePage} />
-          <Stack.Screen name="Login" component={LoginForm} />
-          <Stack.Screen name="CreateOrder" component={CreateOrderForm} />
-          <Stack.Screen name="Dashboard" component={DashboardForm} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="CreateOrder" component={CreateOrder} />
+          <Stack.Screen name="Dashboard" component={Dashboard} />
         </Stack.Navigator>
       </NavigationContainer>
       </PersistGate>
