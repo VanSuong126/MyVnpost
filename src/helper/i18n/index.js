@@ -2,16 +2,12 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 import translationVN from './locales/vi.json';
-import translationJP from './locales/ja.json';
 import translationEN from './locales/en.json';
 
 // the translations
 const resources = {
   vi: {
     translation: translationVN,
-  },
-  ja: {
-    translation: translationJP,
   },
   en: {
     translation: translationEN,

@@ -14,7 +14,7 @@ LogBox.ignoreAllLogs();
 
 import _ from 'lodash';
 global._ = _;
-
+import MenuLogin from './src/shared/components/MenuLogin';
 const Root = () => (
   <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
     <Network/>

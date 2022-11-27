@@ -1,6 +1,7 @@
 export const dataService = [
     {
         id: 1,
+        nameIcon: 'search',
         title: 'Tra cứu bưu cục',
         type: 'single',
         linkIcon: require('~assets/images/image_service/TraCuuBuuCuc.png'),
@@ -9,6 +10,7 @@ export const dataService = [
       },
       {
         id: 2,
+        nameIcon: 'dollar',
         title: 'Bảng giá',
         type: 'single',
         linkIcon: require('~assets/images/image_service/BangGia.png'),
@@ -17,6 +19,7 @@ export const dataService = [
       },
       {
         id: 3,
+        nameIcon: 'question',
         title: 'Hỏi đáp',
         type: 'single',
         linkIcon: require('~assets/images/image_service/HoiDap.png'),
@@ -25,6 +28,7 @@ export const dataService = [
       },
       {
         id: 4,
+        nameIcon: 'newspaper-o',
         title: 'Có gì mới',
         type: 'single',
         linkIcon: require('~assets/images/mail.png'),
@@ -33,6 +37,7 @@ export const dataService = [
       },
       {
         id: 5,
+        nameIcon: 'th-large',
         title: 'Thông tin ứng dụng',
         type: 'single',
         linkIcon: require('~assets/images/image_service/ThongTinUngDung.png'),
@@ -41,6 +46,7 @@ export const dataService = [
       },
       {
         id: 6,
+        nameIcon: 'edit',
         title: 'Tính cước thử',
         type: 'single',
         linkIcon: require('~assets/images/image_service/TinhCuocThu.png'),

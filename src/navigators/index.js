@@ -11,7 +11,6 @@ import {
   Dashboard,
   CreateOrder
 } from '~screens';
-
 const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (

@@ -2,133 +2,72 @@ import React, {useState} from 'react';
 import {
   View,
   Text,
+  ImageBackground,
   StyleSheet,
   FlatList,
   Image,
-  Dimensions,
-  SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import HeaderBackGround from '~assets/images/background_home.png';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import BackgroundLogin from '../../../assets/images/backgroundVNPx.png';
 import LogoTop from '~assets/images/logoTop.png';
-// Import library Linner Gradient
-import LinearGradient from 'react-native-linear-gradient';
-import { dataService } from '~data/dataHome';
-// import Image Slider
-var maxwidth = Dimensions.get('screen').width; // width full screen
-var maxheight = Dimensions.get('screen').height; // height full screen
-import Button from 'react-native-button';
-import {SliderBox} from 'react-native-image-slider-box';
-const images = [
-  'https://ictvietnam.mediacdn.vn/162041676108402688/2020/3/31/vnpost-15856676274091826384576.jpg',
-  'https://helenexpress.com/wp-content/uploads/2020/12/vnpost-la-gi.jpg',
-];
+
+import {Colors, Sizes, Width, Height} from '../../../themes';
+import ButtonWithText from '../../../shared/components/buttons/ButtonWithText';
+import InputWithIcon from '../../../shared/components/inputs/InputWithIcon';
+import Footer from '../../../shared/components/Footer';
 
 const HomePage = ({navigation}) => {
-  const [ImageActive, setImageActive] = useState(1);
-  const onchange = nativeEvent => {
-    setImageActive(nativeEvent);
-  };
-  const _renderItemService = ({item}) => {
-    const handelClickModal = value => {
-      setDataModal(value);
-      setModalVisible(true);
-    };
-    // Function Handle icon Service
-    function handleIconService(nameNavigation) {
-      if(nameNavigation==='CreateOrder')
-      {
-        navigation.navigate(nameNavigation);
-      }
-      else
-      {
-        alert('Click Service: ' +nameNavigation)
-      }
-    }
-    return (
-      <View>
-        {item && item.type === 'single' ? (
-          <TouchableOpacity onPress={()=>handleIconService(item.nameNavigation)}>
-            <View style={styles.wrap_item_service} key={item.id}>
-              <LinearGradient
-                // Button Linear Gradient
-                start={{x: 0.01, y: 0.1}}
-                end={{x: 1, y: 1}}
-                colors={['#FFF', item.color]}
-                style={styles.wrap_icon_item_service}>
-                <Image style={styles.icon_service} source={item.linkIcon} />
-              </LinearGradient>
-
-              <Text style={styles.txt_item_service}>{item.title}</Text>
-            </View>
-          </TouchableOpacity>
-        ) : (
-          <TouchableOpacity onPress={() => handelClickModal(item.inclution)}>
-            <View style={styles.wrap_item_service}>
-              <View
-                style={[
-                  styles.wrap_icon_item_service,
-                  {backgroundColor: item?.color},
-                ]}>
-                <FlatList
-                  columnWrapperStyle={{flex: 1, justifyContent: 'space-around'}}
-                  numColumns={3}
-                  data={item.inclution}
-                  renderItem={_renderItemServiceModal}
-                  keyExtractor={item.inclution.id}
-                />
-              </View>
-              <Text style={styles.txt_item_service}>{item.title}</Text>
-            </View>
-          </TouchableOpacity>
-        )}
-      </View>
-    );
-  };
   return (
-    <SafeAreaView style={styles.Container}>
-      <View style={styles.header}>
-        <Image style={styles.img_background_h1} source={HeaderBackGround} />
-        <Image style={styles.img_logoTop} source={LogoTop} />
-      </View>
-      <View style={styles.body}>
-          <Button
-            onPress={() => {
-              navigation.navigate('Login');
-            }}
-            containerStyle={styles.wrap_btn_login}
-            style={styles.txt_login}>
-            Đăng nhập
-          </Button>
-        <View style={styles.wrap}>
-          <SliderBox
-            containerCustomStyle={styles.Slider}
-            images={images}
-            sliderBoxHeight={maxheight * 0.45}
-            onCurrentImagePressed={index =>
-              console.warn(`image ${index} pressed`)
-            }
-            dotColor="#FFEE58"
-            inactiveDotColor="#90A4AE"
-            autoplay
-            circleLoop
-            dotStyle={{
-              display: 'none',
-            }}
-            parentWidth={maxwidth - 40}
-          />
-        </View>
-      </View>
-      <View style={styles.footer}>
-      <FlatList
-                columnWrapperStyle={{flex: 1, justifyContent: 'space-around'}}
-                numColumns={3}
-                data={dataService}
-                renderItem={_renderItemService}
-                keyExtractor={dataService.id}
+    <KeyboardAwareScrollView style={styles.Container}>
+      <ImageBackground
+        resizeMode={'cover'}
+        style={styles.headerLogin_background_img}
+        source={BackgroundLogin}>
+        <View style={styles.headerLogin}>
+          <View style={styles.wrapLogo}>
+            <Image style={styles.headerLogin_logo} source={LogoTop} />
+            <View style={styles.wrapRegister}>
+              <Text style={{fontSize: Sizes.text, fontWeight: '500'}}>
+                Chưa có tài khoản{' '}
+              </Text>
+              <Text style={styles.textLink}>Đăng ký ngay</Text>
+            </View>
+          </View>
+          <View style={styles.wrapFormLogin}>
+            <View style={styles.formLogin}>
+              <InputWithIcon
+                type={'text'}
+                placeholder={'Tài khoản'}
+                nameLeftIcon={'account'}
+                colorLeftIcon={Colors.link}
               />
-      </View>
-    </SafeAreaView>
+              <InputWithIcon
+                type={'password'}
+                placeholder={'Mật khẩu'}
+                nameLeftIcon={'lock'}
+                colorLeftIcon={Colors.link}
+                nameRightIcon={'eye'}
+              />
+              <View style={styles.wrapForgetPass}>
+                <Text style={styles.textLink}>Quên mật khẩu</Text>
+              </View>
+              <ButtonWithText
+                styleButton={styles.buttonLogin}
+                title={'Đăng nhập'}
+              />
+              <ButtonWithText
+                styleButton={styles.buttonLoginOTP}
+                title={'Đăng nhập với OTP'}
+              />
+            </View>
+          </View>
+        </View>
+        <View style={styles.footerLogin}>
+          <Footer />
+        </View>
+      </ImageBackground>
+    </KeyboardAwareScrollView>
   );
 };
 export default HomePage;
@@ -137,72 +76,65 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
   },
-  img_background_h1: {
-    height: maxheight / 5,
-    width: maxwidth,
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
+  headerLogin: {
+    flex: 0.6,
   },
-  header: {
+  headerLogin_background_img: {
+    flex: 1,
     justifyContent: 'center',
+  },
+  headerLogin_logo: {
+    width: Sizes.logo,
+    resizeMode: 'contain',
+  },
+  wrapLogo: {
+    flex: 0.4,
+    height: Height * 0.7 * 0.4,
     alignItems: 'center',
-    flex: 0.2,
-    zIndex: -1,
-    elevation: -1,
-  },
-  body: {
-    flex: 0.5,
-    position: 'relative',
-    bottom: 40,
-    paddingHorizontal: 20,
-    alignItems: 'center',
-  },
-  img_logoTop: {
-    position: 'absolute',
-    top: 30,
-    height: 50,
-    width: 100,
-  },
-  txt_login: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: 'orange',
-  },
-  wrap_btn_login: {
     justifyContent: 'center',
+  },
+  wrapFormLogin: {
+    flex: 0.6,
+    paddingHorizontal: Sizes.padding,
+  },
+  formLogin: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  wrapRegister: {
+    flexDirection: 'row',
     alignItems: 'center',
-    height: 40,
-    width: 130,
-    backgroundColor: '#FFF',
-    borderRadius: 50,
-    zIndex: 2,
-    elevation: 2,
+    paddingHorizontal: Sizes.padding,
   },
-  Slider: {
-    borderRadius: 8,
+  textLink: {
+    fontSize: Sizes.text,
+    color: Colors.link,
+    fontWeight: '500',
   },
-  wrap: {
-    position: 'relative',
-    bottom: 20,
-    marginHorizontal: 20,
-    borderRadius: 2,
-    zIndex: -1,
-    elevation: -1,
+  wrapForgetPass: {
+    alignSelf: 'flex-end',
+    marginVertical: Sizes.margin,
+    paddingHorizontal: Sizes.padding,
   },
-  footer: {
-    flex: 0.3,
+  buttonLoginOTP: {
+    backgroundColor: 'green',
+  },
+  footerLogin: {
+    flex: 0.4,
+    height: Height * 0.4,
   },
   wrap_item_service: {
+    flex: 1,
     marginVertical: 5,
     alignItems: 'center',
     justifyContent: 'space-between',
-    width: 100,
+    width: Height / 4,
   },
   wrap_icon_item_service: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: 50,
-    width: 50,
+    height: Sizes.button,
+    width: Sizes.button,
     borderRadius: 8,
   },
   txt_item_service: {

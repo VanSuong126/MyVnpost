@@ -43,9 +43,12 @@ export const Colors = {
 
 export const Sizes = {
   tab: parseSize(30),
-  icon: parseSize(30),
+  icon: parseSize(24),
+  logo: parseSize(120),
   input: parseSize(54),
-  button: parseSize(54),
+  text: parseSize(14),
+  inputHeight:parseSize(40),
+  button: parseSize(40),
   item: parseSize(72.8),
   slideMedium: parseSize(140),
   slideLarge: parseSize(230),

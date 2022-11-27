@@ -1,6 +1,7 @@
 export const dataService = [
   {
     id: 1,
+    nameIcon: 'search',
     title: 'Tạo đơn hàng',
     type: 'single',
     linkIcon: require('~assets/images/image_service/TaoDonHang.png'),
@@ -9,6 +10,7 @@ export const dataService = [
   },
   {
     id: 2,
+    nameIcon: 'search',
     title: 'Quản lý đơn hàng',
     type: 'modal',
     linkIcon: [
@@ -20,6 +22,7 @@ export const dataService = [
     inclution: [
       {
         id: 2.1,
+        nameIcon: 'search',
         title: 'Đơn hàng nháp',
         type: 'single',
         linkIcon: require('~assets/images/image_service/DonHangNhap.png'),
@@ -28,6 +31,7 @@ export const dataService = [
       },
       {
         id: 2.2,
+        nameIcon: 'search',
         title: 'Đơn hàng trong ngày',
         type: 'single',
         linkIcon: require('~assets/images/image_service/TaoDonHang.png'),
@@ -36,6 +40,7 @@ export const dataService = [
       },
       {
         id: 2.3,
+        nameIcon: 'search',
         title: 'Danh sách đơn hàng',
         type: 'single',
         linkIcon: require('~assets/images/image_service/DanhSachDonHang.png'),
@@ -46,6 +51,7 @@ export const dataService = [
   },
   {
     id: 3,
+    nameIcon: 'search',
     title: 'Quản lý thống kê',
     type: 'modal',
     linkIcon: [
@@ -57,6 +63,7 @@ export const dataService = [
     inclution: [
       {
         id: 3.1,
+        nameIcon: 'search',
         title: 'Báo cáo thống kê',
         type: 'single',
         linkIcon: require('~assets/images/image_service/BaoCaoThongKe.png'),
@@ -65,6 +72,7 @@ export const dataService = [
       },
       {
         id: 3.2,
+        nameIcon: 'search',
         title: 'Thống kê phát hoàn',
         type: 'single',
         linkIcon: require('~assets/images/image_service/ThongKePhatHoan.png'),
@@ -73,6 +81,7 @@ export const dataService = [
       },
       {
         id: 3.3,
+        nameIcon: 'search',
         title: 'Thống kê tiền trả',
         type: 'single',
         linkIcon: require('~assets/images/image_service/ThongKeTienTra.png'),
@@ -83,6 +92,7 @@ export const dataService = [
   },
   {
     id: 4,
+    nameIcon: 'search',
     title: 'Định vị bưu gửi',
     type: 'single',
     linkIcon: require('~assets/images/image_service/DinhViBuuGui.png'),
@@ -91,6 +101,7 @@ export const dataService = [
   },
   {
     id: 5,
+    nameIcon: 'search',
     title: 'Danh sách người nhận',
     type: 'single',
     linkIcon: require('~assets/images/image_service/DanhSachNguoiNhan.png'),
@@ -99,6 +110,7 @@ export const dataService = [
   },
   {
     id: 6,
+    nameIcon: 'search',
     title: 'Danh sách đặt báo',
     type: 'single',
     linkIcon: require('~assets/images/image_service/DanhSachDatBao.png'),
@@ -107,6 +119,7 @@ export const dataService = [
   },
   {
     id: 7,
+    nameIcon: 'search',
     title: 'Đơn hàng nhận',
     type: 'single',
     linkIcon: require('~assets/images/image_service/DonHangNhan.png'),
@@ -115,6 +128,7 @@ export const dataService = [
   },
   {
     id: 8,
+    nameIcon: 'search',
     title: 'Tickets',
     type: 'single',
     linkIcon: require('~assets/images/image_service/Tickets.png'),
@@ -123,6 +137,7 @@ export const dataService = [
   },
   {
     id: 9,
+    nameIcon: 'search',
     title: 'Tra cứu bưu cục',
     type: 'single',
     linkIcon: require('~assets/images/image_service/TraCuuBuuCuc.png'),
@@ -131,6 +146,7 @@ export const dataService = [
   },
   {
     id: 10,
+    nameIcon: 'search',
     title: 'Bảng giá',
     type: 'single',
     linkIcon: require('~assets/images/image_service/BangGia.png'),
@@ -139,6 +155,7 @@ export const dataService = [
   },
   {
     id: 11,
+    nameIcon: 'search',
     title: 'Hỏi đáp',
     type: 'single',
     linkIcon: require('~assets/images/image_service/HoiDap.png'),
@@ -147,6 +164,7 @@ export const dataService = [
   },
   {
     id: 12,
+    nameIcon: 'search',
     title: 'Tính cước thử',
     type: 'single',
     linkIcon: require('~assets/images/image_service/TinhCuocThu.png'),
@@ -155,6 +173,7 @@ export const dataService = [
   },
   {
     id: 13,
+    nameIcon: 'search',
     title: 'Thông tin ứng dụng',
     type: 'single',
     linkIcon: require('~assets/images/image_service/ThongTinUngDung.png'),
@@ -163,6 +182,7 @@ export const dataService = [
   },
   {
     id: 14,
+    nameIcon: 'search',
     title: 'Tạo lô hàng',
     type: 'single',
     linkIcon: require('~assets/images/image_service/TaoLoHang.png'),
@@ -173,14 +193,17 @@ export const dataService = [
 
 export const dataSlider = [
   {
+    nameIcon: 'search',
     title: 'Tra cứu bưu cục',
     illustration: 'https://i.imgur.com/UYiroysl.jpg',
   },
   {
+    nameIcon: 'search',
     title: 'Tính thử cước',
     illustration: 'https://i.imgur.com/UPrs1EWl.jpg',
   },
   {
+    nameIcon: 'search',
     title: 'Thêm người vào danh sách đen',
     illustration: 'https://i.imgur.com/MABUbpDl.jpg',
   },

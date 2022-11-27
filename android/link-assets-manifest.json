@@ -2,10 +2,6 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/Ionicons.ttf",
-      "sha1": "991bb7fac9709cd58da37901770efd4703c542ed"
-    },
-    {
       "path": "src/assets/fonts/NotoSans-Bold.ttf",
       "sha1": "00a4dc42180951b52eb9797cb4d6f64527432220"
     },
