@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "852438699896",
+    "project_id": "myvnpost-8c9c6",
+    "storage_bucket": "myvnpost-8c9c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852438699896:android:c8439e18e5229602dd028d",
+        "android_client_info": {
+          "package_name": "com.myvnpost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852438699896-65tt4rhbjjjg4qhru3hr15mn7ft7errp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myvnpost",
+            "certificate_hash": "3de0266fc4a8e7c222918c8efede5f14e63b0528"
+          }
+        },
+        {
+          "client_id": "852438699896-06u3mcoha23smnqoc3bdu6srquihu3va.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvX7VJT1zjHREC1-I5cNqHoTekKAeOz8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852438699896-06u3mcoha23smnqoc3bdu6srquihu3va.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
