@@ -1,3 +1,4 @@
+import { size } from "lodash";
 import React from "react";
 import { View, Text, StyleSheet,TouchableOpacity} from "react-native";
 import { Sizes, Colors} from "../../../../themes";
@@ -26,5 +27,7 @@ const styles = StyleSheet.create({
         fontSize:Sizes.text,
         color:Colors.white,
         fontWeight:'bold',
+        paddingVertical:size.padding,
+        paddingHorizontal:Sizes.padding,
     }
 })

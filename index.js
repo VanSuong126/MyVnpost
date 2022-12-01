@@ -15,10 +15,11 @@ LogBox.ignoreAllLogs();
 import _ from 'lodash';
 global._ = _;
 import MenuLogin from './src/shared/components/MenuLogin';
+import InputPhoneNumber from './src/shared/components/inputs/InputPhoneNumber';
 const Root = () => (
   <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
     <Network/>
     <Navigation/>
 </SafeAreaView>
 );
-AppRegistry.registerComponent(appName, () => Root);
+AppRegistry.registerComponent(appName, () => InputPhoneNumber);

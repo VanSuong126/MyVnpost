@@ -31,6 +31,7 @@ import {FloatingAction} from 'react-native-floating-action';
 import {useDispatch} from 'react-redux';
 import {set} from 'immer/dist/internal';
 
+
 const _renderItemSlide = ({item}) => {
   return (
     <View style={styles.item_carousel} key={item.id}>
