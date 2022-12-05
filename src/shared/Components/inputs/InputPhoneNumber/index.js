@@ -1,52 +1,63 @@
-import React, {useState} from 'react';
-import { View,Text, StyleSheet, TextInput } from "react-native";
+import React, {useState, useLayoutEffect} from 'react';
+import { View,StyleSheet, TextInput } from "react-native";
 
-import { Sizes,Colors, Width } from "../../../../themes";
+import { Sizes,Colors } from "../../../../themes";
 
 import {dataCountry} from '../../../../data/dataCountry';
 import InputSelection from "../InputSelection";
-import ModalListCountry from "../../modals/ModalListCountry";
+
 import IconVector, {IconType} from '../../icons/IconVector';
 import ButtonWithText from '../../buttons/ButtonWithText';
-import { size } from 'lodash';
+
+
+import diaLog from '../../../../helper/diaLog';
 
 const InputPhoneNumber =props =>{
-   const [selectText, setSelectText] = useState();
-   const [selectPhoneCode, setSelectPhoneCode] = useState();
-   const [visibleModal, setVisibleModal] = useState(false);
+   const {style,input ,openModalSelect, onSubmit} =props;
+   const [nameCountry, setNameCountry] = useState();
+   const [phoneCode, setPhoneCode] = useState();
+   const [phoneNumber, setPhoneNumber] = useState('');
    
+   useLayoutEffect (()=>{
+    setNameCountry(input.nameCountry);
+    setPhoneCode(input.phoneCode);
+   },[input])
    const onPressInputSelection =()=>{
      setVisibleModal(true);
    }
-   const onSelectCountry = value => {
-        setSelectText(value.nameCountry);
-        setSelectPhoneCode(value.numberPhone);
-        setVisibleModal(false);
-   }
    const enterCountryCode = value =>{
-        setSelectPhoneCode(value);
+    setPhoneCode(value);
     if(value.length>0)
     {
-        var country = dataCountry.filter(v=>v.numberPhone === value);
-        if( country.length >0 )
-        {
-            setSelectText(country[0].nameCountry);
-        }
-        else {
-            setSelectText('');
-        }
-        
+        var country = dataCountry.filter(v=>v.phoneCode === value);
+        country.length >0 ? setNameCountry(country[0].nameCountry) : setNameCountry(null);   
     }
    }
+   const enterPhoneNumber = number =>{
+        setPhoneNumber(number);
+   }
    const clickContinue =()=>{
-    
+       if (phoneCode.length>0)
+       {
+            if(phoneNumber.length>0)
+            {
+                onSubmit('+' + phoneCode + phoneNumber);
+            }
+            else {
+                  diaLog.showDialogMessage('invalid number phone', 'close');
+            }
+       }
+       else 
+       {
+          diaLog.showDialogMessage('invalid phone code','close');
+       }
    }
  return(
-        <View style ={styles.container}>
+        <View style ={[styles.container,style]}>
             <InputSelection
-            value ={selectText}
+            value ={nameCountry}
             placeholder= {'Chọn quốc gia'}
-            openSelectList = {onPressInputSelection}
+            openSelectList = {openModalSelect}
             />
          <View style ={styles.wrapPhone}>
             <View style ={styles.wrapCodeCountry}>
@@ -56,18 +67,15 @@ const InputPhoneNumber =props =>{
                 size ={Sizes.medium}
                 color ={Colors.dark}
                 />
-                <TextInput value={selectPhoneCode} onChangeText={text =>enterCountryCode(text)} keyboardType='numeric' maxLength={3} style ={styles.textCodeCountry}/>
+                <TextInput value={phoneCode} onChangeText={e =>enterCountryCode(e)} keyboardType='numeric' maxLength={3} style ={styles.textCodeCountry}/>
             </View>
             <View style ={styles.wrapPhoneNumber}>
               <View style={styles.lineLeft} />
-              <TextInput keyboardType='numeric' maxLength={10} style ={styles.textNumberPhone}/>
+              <TextInput value={phoneNumber} keyboardType='numeric' onChangeText={e =>enterPhoneNumber(e)} maxLength={10} style ={styles.textNumberPhone}/>
             </View>
          </View>
         <ButtonWithText title ={'Tiếp tục'} onPress ={clickContinue}/>
-        < ModalListCountry
-            visible = {visibleModal}
-            selectItem ={value => onSelectCountry(value)}
-            />
+       
     </View>
  )
 }
@@ -75,7 +83,7 @@ export default InputPhoneNumber
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
+        flex:0.5,
         justifyContent:'center',
         alignItems:"center",
     },

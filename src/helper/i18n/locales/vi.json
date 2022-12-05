@@ -8,5 +8,6 @@
   "rule":"Quy định",
   "FAQ":"Câu hỏi thường gặp",
   "guide": "Hướng dẫn sử dụng",
-  "contact":"Liên hệ"
+  "contact":"Liên hệ",
+  "otpLimit": "Otp hết hạn sau"
 }

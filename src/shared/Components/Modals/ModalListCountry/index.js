@@ -1,11 +1,14 @@
 import React from 'react';
-import {View, Text, Modal, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
+import Modal from "react-native-modal";
 
 import HeaderTitle from '../../headers/HeaderTitle';
 import {Sizes, Colors, Width, Height} from '../../../../themes';
 import {dataCountry} from '../../../../data/dataCountry';
 
 const ModalListCountry = ({visible = false, style, selectItem}) => {
+
+  // Render Country
   const renderCountry = ({item}) => {
     return (
       <TouchableOpacity style={styles.content} key={item.id} onPress ={() =>selectItem(item)}>
@@ -15,7 +18,7 @@ const ModalListCountry = ({visible = false, style, selectItem}) => {
           </View>
           <View style={styles.phoneCode}>
             <Text style={styles.textPhoneCode}>
-              +{item.numberPhone}</Text>
+              +{item.phoneCode}</Text>
           </View>
         </View>
         <View style={styles.line} />
@@ -23,9 +26,7 @@ const ModalListCountry = ({visible = false, style, selectItem}) => {
     );
   };
   return (
-    <View flex-center>
-      <Modal animationType="fade" transparent={true} visible={visible}>
-        <View flex-center style={styles.modal}>
+      <Modal style= {styles.modal} visible={visible}>
           <View style={styles.container}>
             <HeaderTitle
                 title= {'Danh muc quoc gia'}
@@ -35,10 +36,8 @@ const ModalListCountry = ({visible = false, style, selectItem}) => {
               renderItem={renderCountry}
               keyExtractor={item => item.id}
             />
-          </View>
         </View>
       </Modal>
-    </View>
   );
 };
 
@@ -46,16 +45,13 @@ export default ModalListCountry;
 
 const styles = StyleSheet.create({
   modal: {
-    flex: 1,
+    flex:1,
+    margin:0,
     backgroundColor: 'rgba(52, 52, 52,0.5)',
   },
   container: {
-    flex: 1,
+    flex:1,
     backgroundColor: Colors.white,
-    marginHorizontal: Sizes.margin,
-    marginVertical: Sizes.margin,
-    borderRadius: Sizes.radius,
-    overflow:'hidden',
   },
   content: {
     flex: 1,
@@ -64,7 +60,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: Sizes.padding,
+    paddingHorizontal:Sizes.padding,
     paddingVertical:Sizes.padding,
   },
   textNameCountry:{

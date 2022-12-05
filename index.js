@@ -16,10 +16,12 @@ import _ from 'lodash';
 global._ = _;
 import MenuLogin from './src/shared/components/MenuLogin';
 import InputPhoneNumber from './src/shared/components/inputs/InputPhoneNumber';
+import ModalLoginOTP from './src/shared/components/modals/ModalLoginOTP';
+import InputOTP from './src/shared/components/inputs/InputOTP';
 const Root = () => (
   <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
     <Network/>
     <Navigation/>
 </SafeAreaView>
 );
-AppRegistry.registerComponent(appName, () => InputPhoneNumber);
+AppRegistry.registerComponent(appName, () => ModalLoginOTP);
