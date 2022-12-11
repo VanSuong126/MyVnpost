@@ -36,8 +36,8 @@ const InputOTP = props => {
   const onSetCode = code => {
     setCode(code);
   };
-  const onSubmitCode = async number => {
-    await onSubmit(number);
+  const onSubmitCode = async()  => {
+    await onSubmit(code);
     // await setIsClearInput(true);
   };
   return (
@@ -69,7 +69,6 @@ const InputOTP = props => {
             autoFocusOnLoad={false}
             codeInputFieldStyle={styles.styleBase}
             codeInputHighlightStyle={styles.styleBaseHighLighted}
-            onCodeFilled={onSubmitCode}
           />
           <View style={styles.wrapButton}>
             <ButtonWithText
